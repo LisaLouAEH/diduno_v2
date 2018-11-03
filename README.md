@@ -60,12 +60,12 @@ L tab **comments**:
   
 ## Difficultées rencontrées et solutions/  
   
-* [?] Aprés avoir créer mon nouveau projet rails en postgresql, généré des models, saisie des relation, paramettré mes fichiers de migration pour mettre les champs que je voulais dans mes tables etc.. j'ai voulue db:migrate mon programme et j'ai rencontré ce type d'erreur :alien:  
+* [?]-->:alien: Aprés avoir créer mon nouveau projet rails en postgresql, généré des models, saisie des relation, paramettré mes fichiers de migration pour mettre les champs que je voulais dans mes tables etc.. j'ai voulue db:migrate mon programme et j'ai rencontré ce type d'erreur :  
 ``` up 2017100913.. *********NO FILE*********
   up 2017100913.. *********NO FILE*********
   up 2017100913.. *********NO FILE*********  
 ```  
   
-* [!] Aprés avoir détruit et recommencé tout mon travail plusieurs fois, j'ai fini par comprendre que l'erreur provenait de la nécéssité de faire un ``` db:create ``` **avant de migrer**. Une fois les "no_file" envoyé impossible d'effectuer d'autre migration par dessus. J'ai tenté de drop a partir des id de migration directement via la console psql, de supprimer le fichier sql, enfin bref, une vraie pagaille. J'ai due tout recommencer depuis le départ et en plus avec un nouveau nom pour l'app, car un message d'erreur 'already exist' m'empechait par la suite de **db:create**.
+* [!]-->:bulb: Aprés avoir détruit et recommencé tout mon travail plusieurs fois, j'ai fini par comprendre que l'erreur provenait de la nécéssité de faire un ``` db:create ``` **avant de migrer**. Une fois les "no_file" envoyé impossible d'effectuer d'autre migration par dessus. J'ai tenté de drop a partir des id de migration directement via la console psql, de supprimer le fichier sql, enfin bref, une vraie pagaille. J'ai due tout recommencer depuis le départ et en plus avec un nouveau nom pour l'app, car un message d'erreur 'already exist' m'empechait par la suite de **db:create**.
 
 ------------------------------------------------------------------------------------
