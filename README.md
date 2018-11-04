@@ -59,7 +59,8 @@ L tab **comments**:
   
   
 ## Liste exhaustive des erreurs rencontrées et leurs solutions/  
-  
+### Creation d'un model et controller user ###  
+   
 * [?] :alien: Aprés avoir créer mon nouveau projet rails en postgresql, généré des models, saisie des relation, paramettré mes fichiers de migration pour mettre les champs que je voulais dans mes tables etc.. j'ai voulue db:migrate mon programme et j'ai rencontré ce type d'erreur :  
 ``` up 2017100913.. *********NO FILE*********
   up 2017100913.. *********NO FILE*********
@@ -145,3 +146,5 @@ Finished in 0.096805s, 30.9901 runs/s, 30.9901 assertions/s.
 3 runs, 3 assertions, 0 failures, 0 errors, 0 skips
 ```  
 ------------------------------------------------------------------------------------  
+### Crea d'un systeme de session pour l'utilisateur identifié ###  
+
