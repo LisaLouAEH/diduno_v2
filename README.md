@@ -102,3 +102,15 @@ Finished in 0.086882s, 11.5099 runs/s, 11.5099 assertions/s.
     end
   end
   ```  
+Pour obtenir :  
+```Run options: --seed 43067
+
+# Running:
+
+USER VALID !!
+.
+
+Finished in 0.086668s, 11.5383 runs/s, 11.5383 assertions/s.
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+```  
+------------------------------------------------------------------------------------  
