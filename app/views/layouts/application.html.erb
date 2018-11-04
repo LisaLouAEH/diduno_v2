@@ -4,7 +4,9 @@
     <title>Diduno2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,6 +14,18 @@
   <body>
   <!--Cette commande est indispensable a transferer les contenu html dans les diff pages--> 
   <%= yield %>
-  <!---//////////////////////////////////////////////////////////////////////////////////->
+  <!---//////////////////////////////////////////////////////////////////////////////////-->
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Accueil",   '/' %></li>
+          <li><%= link_to "Index des gossips",   '/gossips' %></li>
+          <li><%= link_to "Nouveau gossip", '/gossips/new' %></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   </body>
 </html>

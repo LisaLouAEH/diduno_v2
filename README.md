@@ -151,10 +151,10 @@ Finished in 0.096805s, 30.9901 runs/s, 30.9901 assertions/s.
 * [?] :alien: Je voulais **lier** une view **home.html.erb** avec mon controller **staticPage** et aprés avoir inséré un petit ```<h1>Page 'home' </h1>``` dans mon **home.html.erb**, et bien fait ma route comme suis :  
 ```root  'static_pages#home'
 ```  
-  Je lance le server, **pas de message d'erreur**, et j'obtiens juste une **page blanche** !  
-  L'URL est bon, ma route est fonctionnelle, le server me dit qu'il est bien sur **home.html.erb** mais le navigateur me sort une page blanche :( .
+Je lance le server, **pas de message d'erreur**, et j'obtiens juste une **page blanche** ! L'URL est bon, ma route est fonctionnelle, le server me dit qu'il est bien sur **home.html.erb** mais le navigateur me sort une page blanche :( .
 
 * [!] :key: The **truc important a retenir**  
 --> Dans le **body** du fichier **application.html.erb** (celui qui gere le style de toute les pages de l'appli), il est **indispensable** d'avoir la ligne ```<%= yield %>```*.  
-Sans cette ligne, toute les pages renvoient du **rien**
+Sans cette ligne, toute les pages renvoient du **rien**.
 
+------------------------------------------------------------------------------------

@@ -1,0 +1,27 @@
+<h3>Créer un gossip</h3>
+  <div class="form-row">
+
+    <%= form_for @user, url: {action: "create"}, html: {class: "col-md-6"} do |f| %>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label "Titre"%>
+            <%= f.text_field :title, placeholder: 'Une grande histoire de...', class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "Tags :"%>
+            <%= f.text_field :email, placeholder: '#Jquery, #Bootstrap', class: "form-control"%>
+          </div>
+        </div>
+
+      <div class="col-md-12 form-group">
+        <%= f.label "Votre contenu :"%>
+        <%= f.text_area :bio, size: "30x3", placeholder: 'Dites nous tout ...', class: "form-control" %>
+      </div>
+
+      <div class="col-md-12 form-group">
+        <%= f.submit "Valider", class: "btn btn-outline-success col-md-12" %>
+      </div>
+    <% end %>
+  </div>
+</div>

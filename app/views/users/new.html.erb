@@ -1,0 +1,30 @@
+<h1>Creer un compte GossbOok</h1>
+  <div class="form-row">
+
+    <%= form_for @user, url: {action: "create"}, html: {class: "col-md-6"} do |f| %>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label "Votre nom"%>
+            <%= f.text_field :name, placeholder: 'jean dupont', class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "Votre email"%>
+            <%= f.text_field :email, placeholder: 'jean.dupont@mail.com', class: "form-control"%>
+          </div>
+        </div>
+
+      <div class="col-md-12 form-group">
+        <%= f.label "creer un password"%>
+        <%= f.text_field :password, placeholder: 'password', class: "form-control" %>
+      </div>
+
+      <div class="col-md-12 form-group">
+        <%= f.submit "Valider", class: "btn btn-outline-success col-md-12" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<p class="btn btn-primary"><%= link_to "Mon profil", login_path%></p>
