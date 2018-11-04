@@ -58,7 +58,7 @@ L tab **comments**:
 --------L :content (text)   
   
   
-## Difficultées rencontrées et solutions/  
+## Liste exhaustive des erreurs rencontrées et leurs solutions/  
   
 * [?] :alien: Aprés avoir créer mon nouveau projet rails en postgresql, généré des models, saisie des relation, paramettré mes fichiers de migration pour mettre les champs que je voulais dans mes tables etc.. j'ai voulue db:migrate mon programme et j'ai rencontré ce type d'erreur :  
 ``` up 2017100913.. *********NO FILE*********
@@ -83,7 +83,7 @@ class UserTest < ActiveSupport::TestCase
   end
 end 
 ```  
-Et en lancant le test dans le terminal avec ```rails test:models``` au lieux d'obtenir la barre de chargement du test comme dans l'exemple en vidéo, j'obtiens :  
+  Et en lancant le test dans le terminal avec ```rails test:models``` au lieux d'obtenir la barre de chargement du test comme dans l'exemple en vidéo, j'obtiens :  
 ``` Run options: --seed 41486
 
 # Running:
@@ -102,7 +102,7 @@ Finished in 0.086882s, 11.5099 runs/s, 11.5099 assertions/s.
     end
   end
   ```  
-Pour obtenir :  
+  Pour obtenir :  
 ```Run options: --seed 43067
 
 # Running:
@@ -112,5 +112,36 @@ USER VALID !!
 
 Finished in 0.086668s, 11.5383 runs/s, 11.5383 assertions/s.
 1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+```  
+------------------------------------------------------------------------------------  
+* [?] :alien: Je viens de tester la validité de mes 'name' avec :  
+``` test "name should be present" do
+    @user.name = "     "
+    assert_not @user.valid? 
+    puts "champ 'name' cant be empty: CHECK!"
+  end
+```  
+  Ce qui fonctionne trés bien. Il se trouve que j'ai aussi besoin de tester la même chose sur mon champ 'email'. Je copie colle ce code et remplace **.name** par **.email** un peu partout.  
+```test "name should be present" do
+    @user.email = "     "
+    assert_not @user.valid? 
+    puts "champ 'email' cant be empty: CHECK!"
+  end
+```  
+  Et j'obtiens ```rails aborted!
+test_name_should_be_present is already defined in UserTest```  
+
+* [!] :key: Chaque test doit avoir un nom différent (RAPEL rails 'DON'T REPEAT YOURSELF'), donc la premiere ligne ```test "name should be present" do``` devient  ```test "email should be present" do``` et magie :  
+```Run options: --seed 16094
+
+# Running:
+
+champ 'email' cant be empty: CHECK!
+.champ 'name' cant be empty: CHECK!
+.champ 'email' non-nil: CHECK!
+.
+
+Finished in 0.096805s, 30.9901 runs/s, 30.9901 assertions/s.
+3 runs, 3 assertions, 0 failures, 0 errors, 0 skips
 ```  
 ------------------------------------------------------------------------------------  
