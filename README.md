@@ -68,4 +68,37 @@ L tab **comments**:
   
 * [!] :key: Aprés avoir détruit et recommencé tout mon travail plusieurs fois, j'ai fini par comprendre que l'erreur provenait de la nécéssité de faire un ``` db:create ``` **avant de migrer**. Une fois les "no_file" envoyé impossible d'effectuer d'autre migration par dessus. J'ai tenté de drop a partir des id de migration directement via la console psql, de supprimer le fichier sql, enfin bref, une vraie pagaille. J'ai due tout recommencer depuis le départ et en plus avec un nouveau nom pour l'app, car un message d'erreur 'already exist' m'empechait par la suite de **db:create**.
 
-------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------  
+* [?] :alien: Aprés avoir crée mon model user basiquement (just :name, :email) et avoir crée une instance 'bob', je crée un test dans ```/test/models/user_test.rb``` comme suis :  
+``` require 'test_helper'
+
+class UserTest < ActiveSupport::TestCase
+
+  def setup
+    @user = User.new(name: "Example User", email: "user@example.com")
+  end
+
+  test "should be valid" do
+    assert @user.valid?
+  end
+end 
+```  
+Et en lancant le test dans le terminal avec ```rails test:models``` au lieux d'obtenir la barre de chargement du test comme dans l'exemple en vidéo, j'obtiens :  
+``` Run options: --seed 41486
+
+# Running:
+
+.
+
+Finished in 0.086882s, 11.5099 runs/s, 11.5099 assertions/s.
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+```  
+* [!] :key: Le test avait en réalité bien fonctionné, sauf que l'affichage différait certainement car l'os utilisé dans l'exemple était différent. Il m'a suffit d'inserer une condition et quelques puts pour avoir un rendu plus explicite :  
+```test "should be valid" do
+    if assert @user.valid?
+      puts "USER VALID :) "
+    else 
+      puts "USER INVALID :( "
+    end
+  end
+  ```  
